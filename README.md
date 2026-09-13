@@ -10,7 +10,24 @@
 ### 💻 C# / 演算法
 - **學習內容**：熟悉 C# 基本語法與型態轉換（`Convert.ToInt32`）。
 - **解題紀錄**：[HackerRank - Solve Me First](./) (完成)
-- **心得小結**：C# 的基礎語法跟 C 語言很像，但記憶體管理不用手動處理解放，方便很多。
+- **心得小結**：
+  - C# 的基礎語法跟C基本上一樣，用大括號 { } 建立程式區塊、結尾都要加分號 ;
+  - 變數型態與宣告都和C一樣
+  - 運算子、控制流程、函式定義都一樣
+- **關鍵語法**：
+  ```csharp
+  // return 可將 a + b 的計算結果回傳給呼叫它的程式
+  static int solveMeFirst(int a, int b) {
+      return a + b; // '+' 為加法運算子；'return' 結束函式並回傳數值
+
+  }
+
+
+  ```csharp
+  int val1 = Convert.ToInt32(Console.ReadLine());
+  //Console.ReadLine() 讀取輸入的字串(都是回傳String)
+  //Convert.ToInt32() 將字串轉為整數 val1
+  
 
 ### 📚 閱讀與溝通
 - **閱讀章節**：《卡耐基攻心話術》第 1 章
