@@ -36,4 +36,20 @@ HAVING 分組後要不要再篩
 ↓
 最後 SELECT 我要看到哪些東西
 
+
+### 第三題:查詢老師 “諶燕” 所帶的課程設數量
+- **觀念**：跨表查詢
+- **答案**：
+  ```sql
+  SELECT COUNT(*)
+  FROM course c
+  JOIN teacher t
+  ON c.tno = t.tno
+  WHERE t.tname = '諶燕';
+  ```
+  - **重點觀念**： 跨表查詢 + 用共同欄位 tno 建立關聯，再做聚合統計。
+
+
+
+
 ---
