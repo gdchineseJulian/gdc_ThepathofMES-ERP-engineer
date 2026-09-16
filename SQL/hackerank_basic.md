@@ -4,7 +4,7 @@
 
 ### 題目: Query a list of CITY names from STATION for cities that have an even ID number.
 
-#### Question!
+#### My Question!
 * **如何判斷偶數**：題目要「偶數 ID (even ID number)」，讓我覺得在SQL也能檢查偶數嗎？也能用表達式嗎？答案是可以，不過我寫 id / 2 = 0 錯了..
 * * **重複欄位的處理**：若有同名的城市需要去重（使用 `DISTINCT`）？
 
