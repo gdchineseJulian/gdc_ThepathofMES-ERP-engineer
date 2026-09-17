@@ -24,19 +24,19 @@ SQL50的錯題與延伸題目紀錄
   WHERE score >= 60;
   ```
 - **心法**：
-資料怎麼被處理，再想 SELECT 最後要顯示什麼? 或著 從哪裡拿資料，要把那些資料留下，要顯示什麼？
+  - 資料怎麼被處理，再想 SELECT 最後要顯示什麼? 或著 從哪裡拿資料，要把那些資料留下，要顯示什麼？
+  
+  FROM 哪裡拿資料
+  ↓
+  WHERE 要不要篩
+  ↓
+  GROUP BY 要不要分組
+  ↓
+  HAVING 分組後要不要再篩
+  ↓
+  最後 SELECT 我要看到哪些東西
 
-FROM 哪裡拿資料
-↓
-WHERE 要不要篩
-↓
-GROUP BY 要不要分組
-↓
-HAVING 分組後要不要再篩
-↓
-最後 SELECT 我要看到哪些東西
-
-* COUNT(*)算列的總數；COUNT(score) 算score不是NULL的資料筆數.
+  - COUNT(*)算列的總數；COUNT(score) 算score不是NULL的資料筆數.
 
 - **密技**：
 
