@@ -39,3 +39,23 @@ FROM STATION;
   * **當關鍵字（放在最前面）**：`SELECT DISTINCT CITY, COUNTRY`。這是對「撈出來的最終結果集」整行進行去重。
   * **當修飾字（放在聚合函數內）**：`COUNT(DISTINCT CITY)`。這時它只針對該欄位生效。SQL 的運作流程是：**「先在記憶體中剔除重複的城市名稱，接著 `COUNT()` 才去數這個去重後的清單有幾筆」**。
 * **聚合函數的四則運算**：SQL 允許我們直接將兩個聚合函數的結果進行四則運算（`COUNT(...) - COUNT(...)`）
+
+
+
+
+### 題目: Query the two cities in STATION with the shortest and longest CITY names, as well as their respective lengths (i.e.: number of characters in the name). If there is more than one smallest or largest city, choose the one that comes first when ordered alphabetically.
+
+#### 📝 MY QUESTION!
+* **`DISTINCT` 的觀念**：
+
+#### SQL
+```sql
+SELECT COUNT(CITY) - COUNT(DISTINCT CITY) AS difference 
+FROM STATION;
+```
+
+#### 💡 密技
+* **`DISTINCT` 用法（關鍵字 vs 修飾字）**：
+  * **當關鍵字（放在最前面）**：`SELECT DISTINCT CITY, COUNTRY`。這是對「撈出來的最終結果集」整行進行去重。
+  * **當修飾字（放在聚合函數內）**：`COUNT(DISTINCT CITY)`。這時它只針對該欄位生效。SQL 的運作流程是：**「先在記憶體中剔除重複的城市名稱，接著 `COUNT()` 才去數這個去重後的清單有幾筆」**。
+* **聚合函數的四則運算**：SQL 允許我們直接將兩個聚合函數的結果進行四則運算（`COUNT(...) - COUNT(...)`）
