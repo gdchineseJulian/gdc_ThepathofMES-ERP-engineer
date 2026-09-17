@@ -9,13 +9,13 @@ SQL50的錯題與延伸題目紀錄
 - **觀念**：聚合函數
 - **答案**：
   ```sql
-  SELECT  MIN(score) AS 最低分
-          AVG(score) AS 平均分
+  SELECT  MIN(score) AS 最低分,
+          AVG(score) AS 平均分,
           SUM(score) AS 總分
   FROM sc;
   ```
   - **重點觀念**：
-  - 記得所有聚合函數的方法
+  - 記得所有聚合函數的方法，聚合函數把很多筆資料壓成一個結果！
   - `WHERE` 字串條件要用單引號 `' '` 包起來。
 - 延伸1:查詢成績 60 分以上（包含 60） 的學生共有幾筆成績紀錄。
   ```sql
@@ -35,6 +35,8 @@ GROUP BY 要不要分組
 HAVING 分組後要不要再篩
 ↓
 最後 SELECT 我要看到哪些東西
+
+* COUNT(*)算列的總數；COUNT(score) 算score不是NULL的資料筆數.
 
 - **密技**：
 
