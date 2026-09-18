@@ -11,17 +11,8 @@
 
 ```
 
-
 #### 💡 密技
 * **-**
-
-### 題目: 
-
-#### 📝 MY QUESTION!
-* **`**
-
-#### 💡 密技
-* 
 
 
 
@@ -121,9 +112,44 @@ WHERE CITY LIKE 'A%' OR CITY LIKE 'E%' OR CITY LIKE 'I%' OR CITY LIKE 'O%' OR CI
 ```
 
 
+
 #### 💡 密技
 * **萬用字元**：萬用字元可隨便放，自己搭配。
 * **LIKE用法**：LIKKE不等於 = ，所以不用打等於。
+
+
+
+### 題目: Query the list of CITY names from STATION which have vowels (i.e., a, e, i, o, and u) as both their first and last characters. Your result cannot contain duplicates.
+
+#### My Question!
+* **前後都要母音！？我這樣不就要打25次的CITY LIKE? 因為5頭 * 5尾**：不，我可以用AND拆，第一個字母是母音
+最後一個字母也是母音，這樣只要10個 LIKE
+* 
+
+#### 💻 SQL
+```sql
+SELECT DISTINCT CITY
+FROM STATION
+WHERE
+    (
+        CITY LIKE 'A%'
+        OR CITY LIKE 'E%'
+        OR CITY LIKE 'I%'
+        OR CITY LIKE 'O%'
+        OR CITY LIKE 'U%'
+    )
+AND
+    (
+        CITY LIKE '%A'
+        OR CITY LIKE '%E'
+        OR CITY LIKE '%I'
+        OR CITY LIKE '%O'
+        OR CITY LIKE '%U'
+    );
+```
+
+#### 💡 密技
+* **不要列舉所有組合，要把條件拆成「集合」來想。**：看到題目就問自己一句：這題能不能先拆成幾個獨立條件，再用 AND / OR 組回去？不同「要求」之間用 AND，同一個要求裡有多種可能，用 OR。
 
 
 
