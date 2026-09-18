@@ -103,3 +103,26 @@ LIMIT 1;
 #### 💡 密技
 * **值和欄位資料的差別**：聚合函數負責取值，它知道特定的值而已，但不知道該值的長相。
 * **ORDER BY LENGTH(CITY), CITY**：先按名字長度排序；如果長度相同，再按字典順序排序。
+
+
+
+
+### 題目: Query the list of CITY names starting with vowels (i.e., a, e, i, o, or u) from STATION. Your result cannot contain duplicates.
+
+#### My Question!
+* **開頭是母音...，應該沒有這種規則的函數呀，我們能自訂規則嗎？**：用LIKE，搭配萬用字元%%%，用固定的萬用字元去描述想找的字串格式，% = 任意長度的任意字元，0 個也可以；_ = 剛好 1 個任意字元。WHERE CITY = 'Apple'，代表CITY一定是Apple，而WHERE CITY LIKE 'App%'，代表只要App開頭的字都要。
+* **我可以用IN搭配LIKE嗎？**：不行，沒有這種語法，IN是不同的比較方式，IN 是把很多個 = 合起來。比如CITY IN ('Apple', 'Osaka', 'Ulm')。
+
+#### 💻 SQL
+```sql
+SELECT DISTINCT CITY
+FROM STATION 
+WHERE CITY LIKE 'A%' OR CITY LIKE 'E%' OR CITY LIKE 'I%' OR CITY LIKE 'O%' OR CITY LIKE 'U%';  
+```
+
+
+#### 💡 密技
+* **萬用字元**
+
+
+
