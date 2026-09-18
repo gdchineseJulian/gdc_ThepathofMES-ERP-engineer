@@ -52,12 +52,16 @@ FROM STATION;
 
 #### SQL
 ```sql
-SELECT COUNT(CITY) - COUNT(DISTINCT CITY) AS difference 
-FROM STATION;
+SELECT CITY, LENGTH(CITY)
+FROM STATION
+ORDER BY LENGTH(CITY), CITY
+LIMIT 1;
+
+SELECT CITY, LENGTH(CITY)
+FROM STATION
+ORDER BY LENGTH(CITY) DESC, CITY
+LIMIT 1;
 ```
 
 #### 💡 密技
-* **`DISTINCT` 用法（關鍵字 vs 修飾字）**：
-  * **當關鍵字（放在最前面）**：`SELECT DISTINCT CITY, COUNTRY`。這是對「撈出來的最終結果集」整行進行去重。
-  * **當修飾字（放在聚合函數內）**：`COUNT(DISTINCT CITY)`。這時它只針對該欄位生效。SQL 的運作流程是：**「先在記憶體中剔除重複的城市名稱，接著 `COUNT()` 才去數這個去重後的清單有幾筆」**。
-* **聚合函數的四則運算**：SQL 允許我們直接將兩個聚合函數的結果進行四則運算（`COUNT(...) - COUNT(...)`）
+* **值和欄位資料的差別**：聚合函數負責取值，它知道特定的值而已，但不知道該值的長相。
