@@ -46,7 +46,9 @@ FROM STATION;
 ### 題目: Query the two cities in STATION with the shortest and longest CITY names, as well as their respective lengths (i.e.: number of characters in the name). If there is more than one smallest or largest city, choose the one that comes first when ordered alphabetically.
 
 #### 📝 MY QUESTION!
-* **`DISTINCT` 的觀念**：
+* **找出字串最短和最長字的城市名字？怎麼不是用聚合函數**：MAX() / MIN() 是找「值」用的，它可以找出最長幾個字，但不知道是什麼字，也就是他不知道是誰。他只能知道最長長度是3，可不知道3的是哪個城市？所以直接用「最小值對應的那筆資料是誰」→ ORDER BY + LIMIT
+* **取長度的函數**：LENGTH(欄位)，它是算bytes長度，因此以後碰到中文、越南文等 Unicode 字串，用CHAR_LENGTH()
+* **有辦法用一個SELECT就取得所有想要的結果嗎？**：可以，但不要為了「只用外面一個 SELECT」，反而搞得更複雜。SQL 的思維要用最合理的方法取得我要的資料。
 
 #### SQL
 ```sql
