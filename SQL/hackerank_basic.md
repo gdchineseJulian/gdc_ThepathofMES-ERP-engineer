@@ -25,8 +25,8 @@ WHERE MOD(ID,2) = 0;
 ### 題目: Find the difference between the total number of CITY entries in the table and the number of distinct CITY entries in the table.
 
 #### 📝 MY QUESTION!
-* **`DISTINCT` 的觀念**：原本一直以為 `DISTINCT` 是一個針對「最終輸出結果」去重的關鍵字，**只能強制放在所有欄的最前面**（例如：`SELECT DISTINCT 欄位A, 欄位B...`）。
-* **函數內部的運作質疑**：我不確定為什麼 `DISTINCT` 可以被放到 `COUNT()` 的括號裡面，以及它在裡面到底是怎麼被執行的。
+* **`DISTINCT` 的觀念**：原本一直以為 `DISTINCT` 只是對「輸出結果」SET()的關鍵字，我以為**只能強制放在所有欄的最前面**（例如：`SELECT DISTINCT 欄位A, 欄位B...`）。
+* **函數裡面怎麼跑的 **：我不確定為什麼 `DISTINCT` 可以被放到 `COUNT()` 的括號裡面，以及它在裡面到底是怎麼被執行的。
 
 #### SQL
 ```sql
