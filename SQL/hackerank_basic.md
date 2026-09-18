@@ -122,7 +122,8 @@ WHERE CITY LIKE 'A%' OR CITY LIKE 'E%' OR CITY LIKE 'I%' OR CITY LIKE 'O%' OR CI
 
 
 #### 💡 密技
-* **萬用字元**
+* **萬用字元**：萬用字元可隨便放，自己搭配。
+* **LIKE用法**：LIKKE不等於 = ，所以不用打等於。
 
 
 
