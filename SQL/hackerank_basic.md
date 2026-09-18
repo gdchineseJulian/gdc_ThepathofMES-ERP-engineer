@@ -1,5 +1,41 @@
 # BASIC SELECT
 
+
+### 題目: 
+
+#### My Question!
+* **.**：
+
+#### 💻 SQL
+```sql
+
+```
+
+
+#### 💡 密技
+* **-**
+
+### 題目: 
+
+#### 📝 MY QUESTION!
+* **`**
+
+#### 💡 密技
+* 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## 9/17
 
 ### 題目: Query a list of CITY names from STATION for cities that have an even ID number.
@@ -26,9 +62,7 @@ WHERE MOD(ID,2) = 0;
 
 #### 📝 MY QUESTION!
 * **`DISTINCT` 的觀念**：原本一直以為 `DISTINCT` 只是對「輸出結果」SET()的關鍵字，我以為**只能強制放在所有欄的最前面**（例如：`SELECT DISTINCT 欄位A, 欄位B...`）。
-* **函數裡面怎麼跑的 **：我不確定為什麼 `DISTINCT` 可以被放到 `COUNT()` 的括號裡面，以及它在裡面到底是怎麼被執行的。
-
-#### SQL
+* **函數裡面怎麼跑的**：我不確定為什麼 `DISTINCT` 可以被放到 `COUNT()` 的括號裡面，以及它在裡面到底是怎麼被執行的。
 ```sql
 SELECT COUNT(CITY) - COUNT(DISTINCT CITY) AS difference 
 FROM STATION;
@@ -41,7 +75,7 @@ FROM STATION;
 * **聚合函數的四則運算**：SQL 允許我們直接將兩個聚合函數的結果進行四則運算（`COUNT(...) - COUNT(...)`）
 
 
-
+## 9/18
 
 ### 題目: Query the two cities in STATION with the shortest and longest CITY names, as well as their respective lengths (i.e.: number of characters in the name). If there is more than one smallest or largest city, choose the one that comes first when ordered alphabetically.
 
