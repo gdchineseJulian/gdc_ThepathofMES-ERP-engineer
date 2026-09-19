@@ -153,3 +153,38 @@ AND
 
 
 
+### 題目: Query the list of CITY names from STATION that do not start with vowels and do not end with vowels. Your result cannot contain duplicates.
+
+#### My Question!
+* **為什麼剛剛開頭跟結尾要母音就用OR..這邊缺轉邏輯變成AND!?**：同時間/同狀態要成立用 AND，條件 A 而且 條件 B 必須同時存在；或排除 A 而且 排除 B；只要其中一個成立即可（不同時/多選一）要 A 或者 要 B（白名單中任意一個）
+* **為什麼我現在結尾要打小寫!?**：在特定的資料庫設定下，字串比較是區分大小寫（Case-Sensitive）的。所以要選MY SQL。以後可以先統一轉成大寫（或小寫）再比對
+
+#### 💻 SQL
+```sql
+SELECT DISTINCT CITY
+FROM STATION WHERE
+(
+CITY NOT LIKE 'A%' AND
+CITY NOT LIKE 'E%' AND
+CITY NOT LIKE 'I%' AND
+CITY NOT LIKE 'O%' AND
+CITY NOT LIKE 'U%'
+)
+
+AND
+
+(
+CITY NOT LIKE '%A' AND
+CITY NOT LIKE '%E' AND
+CITY NOT LIKE '%I' AND
+CITY NOT LIKE '%O' AND
+CITY NOT LIKE '%U'
+    
+);
+```
+
+#### 💡 密技
+
+
+
+
