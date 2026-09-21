@@ -8,7 +8,7 @@ Leaf: If node is leaf node.
 Inner: If node is neither root nor leaf node.
 
 #### My Question!
-* **.**：
+* **我要怎麼知道一個欄位的資料有沒有出現在另一個欄位的資料..**：
 
 #### 💻 SQL
 ```sql
