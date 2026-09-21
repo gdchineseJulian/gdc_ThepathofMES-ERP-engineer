@@ -188,3 +188,23 @@ CITY NOT LIKE '%U'
 
 
 
+## 9/21
+
+### 題目: Query the Name of any student in STUDENTS who scored higher than  Marks. Order your output by the last three characters of each name. If two or more students both have names ending in the same last three characters (i.e.: Bobby, Robby, etc.), secondary sort them by ascending ID.
+
+#### My Question!
+* **按照姓名的最後三個字去做排序...**：是要怎麼只抽出最後三個字去排序呢？用**字串函數**，通常這些函數是用來把很醜的資料，或需要特殊規則的資料做整理用的。這題要用**字串擷取函數**，有**LEFT**跟**RIGHT**以及**SUBSTRING**，用來抓出特定位置的字元（比如可以抓副檔名、卡號最後三碼阿...)。
+  - LEFT(字串,長度) 從開頭取指定長度的字元
+  - RIGHT(字串,長度) 從結尾取指定長度的字元
+  - SUBSTRING(字串,起始位置,長度) 從指定位置開始取指定長度的字元
+* **切出來後是怎麼運作的?**：每一筆資料會先切自己的末三碼，比如Bobby切出bby...有bby、ice、abc、ade之後，這些末三碼要自己比較，比對bby、ice、abc、ade...，abc先，接下來換ade、ice、bby..就ade...。以此類推。題目又說如果第一階段比較一樣的話，就用第二個條件，比較ID，那就直接ORDER BY ID即可。結果可能就是abc 1 abc 3 ade bby ice。
+
+#### 💻 SQL
+```sql
+SELECT Name
+FROM STUDENTS ENT WHERE 
+Marks > 75 ORDER BY RIGHT(Name, 3) ASC, ID ASC;
+```
+
+#### 💡 密技
+* **-**
