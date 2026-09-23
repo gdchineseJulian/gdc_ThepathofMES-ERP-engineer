@@ -64,7 +64,7 @@ FROM TRIANGLES;
 
 
 
-### 題目: We define an employee's total earnings to be their monthly "salary months" worked, and the maximum total earnings to be the maximum total earnings for any employee in the Employee table. Write a query to find the maximum total earnings for all employees as well as the total number of employees who have maximum total earnings. Then print these values as  space-separated integers.算出「最高總收入」是多少錢，每個員工的總收入算式是：月薪 (salary) × 工作月數 (months)。要算出全公司所有人當中，這個乘積的最大值。算出「有幾個人」領到這個最高總收入，因為可能不只一位員工賺到這個最高金額，所以要統計達到這個最高收入的總人數。
+### 題目: We define an employee's total earnings to be their monthly "salary months" worked, and the maximum total earnings to be the maximum total earnings for any employee in the Employee table. Write a query to find the maximum total earnings for all employees as well as the total number of employees who have maximum total earnings. Then print these values as  space-separated integers.算出「最高總收入」是前提，結果是要How many people得到這最高總收入。每個員工的總收入算式是：月薪 (salary) × 工作月數 (months)。要算出全公司所有人當中，這個乘積的最大值。因為可能不只一位員工賺到這個最高金額，所以要統計達到這個最高收入的總人數。
 
 #### My Question!
 * **我算得出來最大值，但怎麼用最大值去回推有幾個人呢..**：先把全公司每個人的總收入都算出來（每個人數字不同沒關係）、找出這個數字的最大值、看這個最大值出現了幾次。
