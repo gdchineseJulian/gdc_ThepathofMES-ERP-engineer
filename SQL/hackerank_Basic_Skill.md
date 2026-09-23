@@ -84,3 +84,20 @@ LIMIT 1;
 * **算式可以直接拿來分組與排序**：GROUP BY 或 ORDER BY 不只能放資料庫原本就有的欄位，還能在查詢時現場計算（salary * months），並直接用這個計算結果來分組和排序。
 * **想找除了最大值以外的資訊時**：想找「最高金額、最大數值」並且「同時知道它的附屬資訊（如人數、名稱）」時，ORDER BY ... DESC LIMIT 1 是比單純用 MAX() 更靈活且極度常見的實務寫法
 
+
+
+
+### 題目: Query the sum of Northern Latitudes (LAT_N) from STATION having values greater than 38.7880 and less than 137.2345 . Truncate your answer to decimal places. 請從 STATION 資料表中，計算所有 LAT_N 數值大於 38.7880 且小於 137.2345 的北緯度數總和（Sum）。結果需截斷（Truncate/無條件捨去）至小數點後 4 位。
+
+#### My Question!
+* **Truncate？**：無條件捨去的函數，不論小數點後是大或小都直接捨去，不是四捨五入。TRUNCATE(欄位, 小數位數)，TRUNCATE(X, D) 中的第二個參數 D，代表的是「保留小數點後幾位」，而不是限制「全數字只有幾位」：
+
+#### 💻 SQL
+```sql
+SELECT TRUNCATE(SUM(LAT_N), 4)
+FROM STATION
+WHERE LAT_N > 38.7880 AND LAT_N < 137.2345;
+```
+
+#### 💡 密技
+* **-**
